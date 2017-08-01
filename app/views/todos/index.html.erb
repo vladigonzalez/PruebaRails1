@@ -1,0 +1,12 @@
+<h1>Todos</h1>
+
+<% @todos.each do |todo| %>
+  <div class="well">
+      <%= todo.descripction %>
+      <%= todo.completed %>
+      <%= link_to 'Ver', todo , class:'btn btn-primary'%>
+      <%= link_to 'Editar', edit_todo_path(todo), class:'btn btn-success' %>
+      <%= link_to 'Eliminar', todo, method: :delete, data: { confirmar: 'Seguro que deseas eliminar ?' } , class:'btn btn-warning'%>
+  </div>
+<% end %>
+<%= link_to 'Agregar Nuevo', todos_new_path %>
