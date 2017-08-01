@@ -4,14 +4,18 @@ class TodosController < ApplicationController
   end
 
   def new
-    @todos = Todo.new
+    @todo = Todo.new
   end
 
   def create
-    @todos = Todo.new(todos_params)
+    @todo = Todo.new(todos_params)
     #@todos = Todo.new
-    @todos.save
+    @todo.save
     redirect_to todos_path
+  end
+
+  def show
+    @todo = Todo.find(params[:id])
   end
 
   private

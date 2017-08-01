@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   post 'todos', to: 'todos#create'
 
+  get 'todos/:id', to: 'todos#show', as: 'todo'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
