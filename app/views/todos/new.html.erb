@@ -1,9 +1,2 @@
-<div class="jumbotron">
-  <%= form_with model: @todo, local: true do |f| %>
-    <%= f.label :description, "description:" %>
-    <%= f.text_field :description %>
-    <%= f.label :completed, "Finalizado:" %>
-    <%= f.check_box :completed %>
-    <%= f.submit "Enviar" %>
-  <% end %>
-</div>
+<h2>Agregar Nuevo</h2>
+<%= render 'todos/form' %>

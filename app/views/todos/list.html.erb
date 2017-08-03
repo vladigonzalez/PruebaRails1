@@ -1,0 +1,20 @@
+<h1>Todos</h1>
+<div class="row">
+  <% @todos.each do |todo|  %>
+    <% if todo.completed == False %>
+      <div class="col-md-6">
+        <div class="well well-sm">
+          <%= todo.description %>
+          <%= todo.completed %>
+        </div>
+      </div>
+    <% Else %>
+      <div class="col-md-6">
+        <div class="well well-sm">
+          <%= todo.description %>
+          <%= todo.completed %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

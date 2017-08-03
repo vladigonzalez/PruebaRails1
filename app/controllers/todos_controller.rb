@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+ #before_action :find_todo, only: [:show, :edit, :update, :destroy, :complete]
+
   def index
       @todos = Todo.all
   end
@@ -9,7 +11,6 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(todos_params)
-    #@todos = Todo.new
     @todo.save
     redirect_to todos_path
   end
@@ -35,11 +36,14 @@ class TodosController < ApplicationController
   end
 
   def complete
-    #byebug
     @todo = Todo.find(params[:id])
     @todo.completed = 1
     @todo.save
     redirect_to todos_path
+  end
+
+  def list
+    @todos = Todo.all
   end
 
   private
