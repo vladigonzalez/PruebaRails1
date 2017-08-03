@@ -18,6 +18,30 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
   end
 
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
+  def update
+    @todo = Todo.find(params[:id])
+    @todo.update(todos_params)
+    redirect_to todos_path
+  end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+    redirect_to todos_path
+  end
+
+  def complete
+    #byebug
+    @todo = Todo.find(params[:id])
+    @todo.completed = 1
+    @todo.save
+    redirect_to todos_path
+  end
+
   private
   def todos_params
     params.require(:todo).permit(:description, :completed)

@@ -1,3 +1,13 @@
-<h3> Description: <%= @todo.description %> </h3>
-<h3> Completed:   <%= @todo.completed %> </h3>
-<p> Creado hace: <%= time_ago_in_words @todo.created_at %> </p>
+  <div class="panel panel-default">
+    <div class="panel-heading">Ver Ingreso</div>
+      <div class="panel-body">
+
+        <div>
+          <h3> Description: <%= @todo.description %> </h3>
+          <h3> Completed:   <%= @todo.completed %> </h3>
+          <p> Creado hace: <%= time_ago_in_words @todo.created_at %> </p>
+          <%= link_to 'volver', todos_path, class:'btn btn-info'%>
+        </div>
+      </div>
+    </div>
+  </div>

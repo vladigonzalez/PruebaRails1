@@ -1,10 +1,14 @@
 <h1>Todos</h1>
 
 <% @todos.each do |todo| %>
-  <div class="well">
-      <%= todo.description %>
-      <%= todo.completed %>
-      <%= link_to 'Ver', todo , class:'btn btn-primary'%>
+  <div class="well well-sm">
+    <%= todo.description %>
+    <%= todo.completed %>
+    <%= link_to 'Ver', todo , class:'btn btn-primary'%>
+    <!-- Falta agregar a boton edit que funcione-->
+    <%= link_to 'Editar', edit_todo_path(todo),  class:'btn btn-success' %>
+    <%= link_to "Borrar", todo, method: :delete, class:'btn btn-warning' %>
+    <%= link_to 'Completo', todo, method: :complete, class:'btn btn-info'%>
   </div>
 <% end %>
-<%= link_to 'Agregar Nuevo', todos_new_path %>
+<%= link_to 'Agregar Nuevo', todos_new_path, class:'btn btn-info'%>
