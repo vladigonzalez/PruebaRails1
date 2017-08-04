@@ -1,20 +1,26 @@
-<h1>Todos</h1>
-<div class="row">
-  <% @todos.each do |todo|  %>
-    <% if todo.completed == False %>
-      <div class="col-md-6">
-        <div class="well well-sm">
-          <%= todo.description %>
-          <%= todo.completed %>
-        </div>
-      </div>
-    <% Else %>
-      <div class="col-md-6">
-        <div class="well well-sm">
-          <%= todo.description %>
-          <%= todo.completed %>
-        </div>
-      </div>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>No Completados</h2>
+        <% @todos.each do |todo|  %>
+        <% if todo.completed == false %>
+          <div class="well well-sm">
+            <%= todo.description %>
+            <%= todo.completed %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h2>Completados</h2>
+        <% @todos.each do |todo|  %>
+        <% if todo.completed == true %>
+          <div class="well well-sm">
+            <%= todo.description %>
+            <%= todo.completed %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

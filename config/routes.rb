@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   post 'todos', to: 'todos#create'
 
+  get 'todos/list', to: 'todos#list'
   get 'todos/:id', to: 'todos#show', as: 'todo'
 
   #patch 'todos/:id/edit', to: 'todos#edit'
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
 
   post 'todos/:id', to: 'todos#complete'
 
-  get 'todos/list', to: 'todos#list'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
